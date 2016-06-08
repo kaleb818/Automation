@@ -7,6 +7,7 @@
 - hosts: allnodes
   remote_user: root
   roles:
+    - disable_sel
     - commons
     - ssh_known_hosts
     - jdk
