@@ -1,0 +1,10 @@
+#
+#-----------------------------
+#COMMON INSTALLATIONs
+#-----------------------------
+#
+
+- hosts: namenodes
+  remote_user: root
+  roles:
+    - nosel
