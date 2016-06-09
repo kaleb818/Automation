@@ -11,6 +11,11 @@
 10.4.0.106 host_name=ahmd-datanode-03
 10.4.0.107 host_name=ahmd-datanode-04
 
+#
+# ansible server
+#
+[ansible]
+10.4.0.5
 
 # 
 # hadoop cluster
