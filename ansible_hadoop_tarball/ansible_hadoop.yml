@@ -4,6 +4,11 @@
 #-----------------------------
 #
 
+- hosts: ansible
+  remote_user: jbus
+  roles:
+    - ansible
+
 - hosts: allnodes
   remote_user: root
   roles:
