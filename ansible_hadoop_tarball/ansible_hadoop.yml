@@ -15,8 +15,8 @@
     - disable_sel
     - commons
     - ssh_known_hosts
-	- jdk
-	- ntp
+    - jdk
+    - ntp
 
 
 #
