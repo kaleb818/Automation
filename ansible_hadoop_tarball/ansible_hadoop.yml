@@ -11,6 +11,7 @@
     - commons
     - ssh_known_hosts
     - jdk
+	- ntp
 
 
 #
