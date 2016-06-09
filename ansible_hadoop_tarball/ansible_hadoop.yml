@@ -3,14 +3,6 @@
 #COMMON INSTALLATIONs
 #-----------------------------
 #
-- hosts: ansible
-  remote_user: jbus
-  tasks:
-  - name: download jdk file
-    get-url: url=https://jkbdevops.blob.core.windows.net/files/jdk-7u75-linux-x64.tar.gz dest=filearchives/jdk-7u75-linux-x64.tar.gz
-
-  - name: download Cloudera Install File
-    get_url: url= https://jkbdevops.blob.core.windows.net/files/hadoop-2.3.0-cdh5.1.2.tar.gz dest=filearchives/hadoop-2.3.0-cdh5.1.2.tar.gz
 
 - hosts: allnodes
   remote_user: root
