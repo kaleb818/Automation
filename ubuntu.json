@@ -248,9 +248,8 @@
             }
         }
     ],
-	"outputs": {
-	    "Ansible IP": {
-		    "type": "string",
-			"value": "[reference('variables('publicIpAddressName').IpAddress']"}
-			}
+	"ipaddress": {
+        "type": "string",
+        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName')),providers('Microsoft.Network', 'publicIPAddresses').apiVersions[0]).ipAddress]"
+  },
 }
