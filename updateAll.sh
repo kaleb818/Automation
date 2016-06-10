@@ -10,8 +10,10 @@ wget http://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer
 scp /home/jbus/cloudera-manager-installer.bin jbus@10.4.0.101:cloudera-manager-installer.bin
 
 for HOST in ${SERVERS[@]}; do
-    scp updateRH.sh jbus@${HOST}:updateRH.sh
+    scp /home/jbus/Automation/updateRH.sh jbus@${HOST}:updateRH.sh
 
+	ssh jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh'
+	
     ssh jbus@${HOST} -t 'sudo /home/jbus/updateRH.sh'
 
     if [[ $? -ne 0 ]]; then
