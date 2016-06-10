@@ -3,46 +3,58 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "eastus2"
         },
         "virtualMachineName": {
             "type": "String"
         },
         "virtualMachineSize": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "Standard_DS1"
         },
         "adminUsername": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "jbus"
         },
         "virtualNetworkName": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "jkbdevopsvnet2"
         },
         "adminPassword": {
             "type": "SecureString"
         },
         "storageAccountType": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "Standard_LRS"
         },
         "diagnosticsStorageAccountName": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "nielsenbigdatarg3736"
         },
         "diagnosticsStorageAccountId": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "Microsoft.Storage/storageAccounts/nielsenbigdatarg3736"
         },
         "diagnosticsStorageAccountType": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "Standard_LRS"
         },
         "addressPrefix": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "10.4.0.0/16"
         },
         "subnetName": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "default"
         },
         "subnetPrefix": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "10.4.0.0/24"
         },
         "publicIpAddressType": {
-            "type": "String"
+            "type": "String",
+	  "defaultValue": "Dynamic"
         }
     },
     "variables": {
