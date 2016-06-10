@@ -247,5 +247,10 @@
                 ]
             }
         }
-    ]
+    ],
+	"outputs": {
+	    "Ansible IP": {
+		    "type": "string",
+			"value": "[reference('variables('publicIpAddressName').IpAddress']"}
+			}
 }
