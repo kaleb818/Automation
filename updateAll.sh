@@ -12,9 +12,9 @@ scp /home/jbus/cloudera-manager-installer.bin jbus@10.4.0.101:cloudera-manager-i
 for HOST in ${SERVERS[@]}; do
     scp /home/jbus/Automation/updateRH.sh jbus@${HOST}:updateRH.sh
 
-	ssh jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh'
+	ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh'
 	
-    ssh jbus@${HOST} -t 'sudo /home/jbus/updateRH.sh'
+    ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo /home/jbus/updateRH.sh'
 
     if [[ $? -ne 0 ]]; then
         echo "ERROR: $HOST did not complete"

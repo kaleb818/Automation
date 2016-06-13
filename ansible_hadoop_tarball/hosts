@@ -3,6 +3,7 @@
 # All pre-prod nodes. 
 #
 [allnodes]
+10.4.0.230 host_name=jkbansible
 10.4.0.101 host_name=ahmd-namenode
 10.4.0.102 host_name=ahmd-datanode-01
 10.4.0.103 host_name=ahmd-datanode-02
@@ -15,7 +16,7 @@
 # ansible server
 #
 [ansible]
-10.4.0.5
+10.4.0.230
 
 # 
 # hadoop cluster
@@ -45,6 +46,7 @@ secondarynamenode
 resourcemanager
 jobhistoryserver
 datanodes
+ansible
 
 #
 # sshknown hosts list.

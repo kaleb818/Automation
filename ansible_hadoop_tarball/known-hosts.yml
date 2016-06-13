@@ -1,0 +1,10 @@
+#
+#-----------------------------
+#COMMON INSTALLATIONs
+#-----------------------------
+#
+
+- hosts: allnodes
+  remote_user: root
+  roles:
+    - ssh_known_hosts
