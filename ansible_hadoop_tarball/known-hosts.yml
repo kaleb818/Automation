@@ -8,3 +8,5 @@
   remote_user: root
   roles:
     - ssh_known_hosts
+    - disable_sel
+    - ntp
