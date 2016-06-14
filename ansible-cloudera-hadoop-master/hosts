@@ -1,0 +1,86 @@
+# at least one is required, 2 allowed
+# if 2, ha configured
+[namenodes]
+10.4.0.191
+10.4.0.192
+
+# at least one is required
+[datanodes]
+10.4.0.193
+
+# at least one is required
+# job history server will be also configured on the 1st host
+[yarnresourcemanager]
+10.4.0.194
+
+# optional
+# can be required for other services
+# 3 or 5 hosts is required if 2 namenodes configured
+[zookeepernodes]
+10.4.0.195
+10.4.0.196
+10.4.0.197
+
+# optional
+# required if 2 namenodes configured
+[journalnodes]
+10.4.0.195
+
+# optional
+# required if hivemetastore, oozie or hue configured
+[postgresql]
+10.4.0.196
+
+# optional
+# required if impala-store-catalog configured
+[hivemetastore]
+10.4.0.197
+
+# optional
+[impala-store-catalog]
+
+# optional
+[hbasemaster]
+10.4.0.194
+
+# optional
+[solr]
+
+#optional
+[spark]
+10.4.0.195
+
+# optional
+[oozie]
+10.4.0.196
+
+# optional
+[kafka]
+
+# optional
+[hue]
+10.4.0.197
+
+# optional. comment this out completely or fill in a host into [dashboard]
+#[dashboard]
+[dashboard:children]
+namenodes
+
+# please do not edit the groups below
+[hadoop:children]
+namenodes
+datanodes
+journalnodes
+yarnresourcemanager
+hivemetastore
+impala-store-catalog
+hbasemaster
+solr
+spark
+oozie
+hue
+
+[java:children]
+hadoop
+zookeepernodes
+
