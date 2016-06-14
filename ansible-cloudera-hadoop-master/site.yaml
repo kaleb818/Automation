@@ -101,7 +101,8 @@
     - hivemetastore
 
 - name: Deploy hive client on datanodes
-  remote_user: root  tags: hive
+  remote_user: root
+  tags: hive
   hosts: datanodes
   tasks:
     - include: roles/hivemetastore/tasks/hive-client.yaml
