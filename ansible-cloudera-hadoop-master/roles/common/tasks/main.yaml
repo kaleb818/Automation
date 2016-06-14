@@ -3,7 +3,6 @@
   yum: name={{item}} state=latest
   with_items:
     - "{{ java_package }}"
-    - bigtop-utils
 
 - name: install template configurations
   tags: config
