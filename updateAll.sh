@@ -12,7 +12,7 @@ scp /home/jbus/cloudera-manager-installer.bin jbus@$SERVERS:cloudera-manager-ins
 for HOST in ${SERVERS[@]}; do
     scp /home/jbus/Automation/updateRH.sh jbus@${HOST}:updateRH.sh
 
-	ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh; sudo /home/jbus/updateRH.sh'
+	ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh; sudo /home/jbus/updateRH.sh;  sudo sed -i --follow-symlinks '"'"'s/^SELINUX=.*/SELINUX=disabled/g'"'"' /etc/sysconfig/selinux && cat /etc/sysconfig/selinux'
 	
     #ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo /home/jbus/updateRH.sh'
 
