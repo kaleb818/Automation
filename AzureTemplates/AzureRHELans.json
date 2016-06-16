@@ -172,7 +172,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/kaleb818/Automation/master/setupAnsRH.sh"
+            "https://raw.githubusercontent.com/kaleb818/Automation/master/scripts/setupAnsRH.sh"
           ],
           "commandToExecute": "sh setupAnsRH.sh"
         }
