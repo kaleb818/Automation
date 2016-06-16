@@ -17,8 +17,8 @@ for HOST in ${SERVERS[@]}; do
     #ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo /home/jbus/updateRH.sh'
 
     if [[ $? -ne 0 ]]; then
-        echo "ERROR: $HOST did not complete"
+        echo "ERROR: **************$HOST did not complete***************"
      else
-        echo "$HOST complete"
+        echo "**************$HOST complete**************"
     fi
 done
