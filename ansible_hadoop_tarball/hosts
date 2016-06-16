@@ -3,42 +3,35 @@
 # All pre-prod nodes. 
 #
 [allnodes]
-10.4.0.230 host_name=jkbansible
-10.4.0.101 host_name=ahmd-namenode
-10.4.0.102 host_name=ahmd-datanode-01
-10.4.0.103 host_name=ahmd-datanode-02
-10.4.0.104 host_name=ahmd-resourcemanager
-10.4.0.105 host_name=ahmd-secondary-namenode
-10.4.0.106 host_name=ahmd-datanode-03
-10.4.0.107 host_name=ahmd-datanode-04
-
-#
-# ansible server
-#
-[ansible]
-10.4.0.230
+10.4.0.111 host_name=ahmd-namenode
+10.4.0.112 host_name=ahmd-datanode-01
+10.4.0.113 host_name=ahmd-datanode-02
+10.4.0.114 host_name=ahmd-resourcemanager
+10.4.0.115 host_name=ahmd-secondary-namenode
+10.4.0.116 host_name=ahmd-datanode-03
+10.4.0.117 host_name=ahmd-datanode-04
 
 # 
 # hadoop cluster
 #
 
 [namenodes]
-10.4.0.101
+10.4.0.111
 
 [secondarynamenode]
-10.4.0.105
+10.4.0.115
 
 [resourcemanager]
-10.4.0.104
+10.4.0.114
 
 [jobhistoryserver]
-10.4.0.104
+10.4.0.114
 
 [datanodes]
-10.4.0.102
-10.4.0.103
-10.4.0.106
-10.4.0.107
+10.4.0.112
+10.4.0.113
+10.4.0.116
+10.4.0.117
 
 [hadoopcluster:children]
 namenodes

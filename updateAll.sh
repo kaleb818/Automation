@@ -1,5 +1,5 @@
 #!/bin/bash
-SERVERS=( 10.4.0.181 10.4.0.182 10.4.0.183 10.4.0.184 10.4.0.185 10.4.0.186 10.4.0.187 )
+SERVERS=( 10.4.0.111 10.4.0.112 10.4.0.113 10.4.0.114 10.4.0.115 10.4.0.116 10.4.0.117 )
 
 wget https://jkbdevops.blob.core.windows.net/files/jdk-7u75-linux-x64.tar.gz -P /home/jbus/Automation/ansible_hadoop_tarball/file_archives/
 
