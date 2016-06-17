@@ -7,3 +7,5 @@ pip install paramiko PyYAML Jinja2 httplib2 six
 rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 sudo yum install ansible -y
 sudo rpm -iUvh https://jkbdevops.blob.core.windows.net/files/jdk-8u65-linux-x64.rpm
+git clone https://github.com/kaleb818/Automation.git /home/jbus/Automation --recursive
+find /home/jbus/Automation -type f -exec sed -i 's/10.4.0.11/10.4.0.3/g' {} \;

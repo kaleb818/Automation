@@ -10,7 +10,7 @@ wget http://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer
 scp /home/jbus/cloudera-manager-installer.bin jbus@$SERVERS:cloudera-manager-installer.bin
 
 for HOST in ${SERVERS[@]}; do
-    scp /home/jbus/Automation/updateRH.sh jbus@${HOST}:updateRH.sh
+    scp /home/jbus/Automation/scripts/updateRH.sh jbus@${HOST}:updateRH.sh
 
 	ssh -o StrictHostKeyChecking=no jbus@${HOST} -t 'sudo chmod u+x /home/jbus/updateRH.sh; sudo /home/jbus/updateRH.sh;  sudo sed -i --follow-symlinks '"'"'s/^SELINUX=.*/SELINUX=disabled/g'"'"' /etc/sysconfig/selinux && cat /etc/sysconfig/selinux'
 	
