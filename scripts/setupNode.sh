@@ -19,9 +19,6 @@ else
   #disable selinux
   sed -i --follow-symlinks 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
 
-  #Turn off sudo password for jbus
-  ./sudoPass.sh
-
   #create the ssh directory
   mkdir /home/jbus/.ssh
 
@@ -34,5 +31,7 @@ else
   #set the permissions on the directories
   echo "changing permissions on .ssh"
   chmod 700 .ssh; chmod 640 .ssh/authorized_keys
+  
+  reboot
 
 fi
