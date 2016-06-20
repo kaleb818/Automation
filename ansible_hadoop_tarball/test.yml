@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Deploy Azure VM with Defaults
+    azure_rm_virtualmachine:
+        resource_group: nielsenbigdatarg
+        name: jkbggg03
+        vm_size: Standard_D1
+        admin_username: jbus
+        admin_password: SprPassw0rd123
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.1'
+          version: latest
