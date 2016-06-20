@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create Azure Deploy
+      azure_rm_deployment:
+        state: present
+        location: 'centralus'
+        subscription_id: bbec2183-3b67-450d-8f37-b6edefbfea5b
+        resource_group_name: jkbnsncdh
+        parameters_link: 'https://raw.githubusercontent.com/kaleb818/cdhtemplate/master/azuredeploy.parameters.json'
+        template_link: 'https://raw.githubusercontent.com/kaleb818/cdhtemplate/master/chdtemplate.json'
+      register: azure
