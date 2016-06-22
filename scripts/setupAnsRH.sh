@@ -2,7 +2,7 @@ yum update -y
 yum install git -y
 git clone git://github.com/ansible/ansible.git /home/jbus/ansible --recursive 
 source /home/jbus/ansible/hacking/env-setup
-/home/jbus/ansible/easy_install pip
+easy_install pip
 pip install paramiko PyYAML Jinja2 httplib2 six
 rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 sudo yum install ansible -y
