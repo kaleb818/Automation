@@ -4,7 +4,7 @@
 wget http://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer.bin -P /home/jbus/
 
 #get the script to disable sudo password for jbus
-wget https://raw.githubusercontent.com/kaleb818/cdhtemplate/master/scripts/sudoPass.sh -P /home/jbus/
+wget https://raw.githubusercontent.com/kaleb818/Automation/master/scripts/sudoPass.sh -P /home/jbus/
 
 #all script execution
 chmod +x /home/jbus/sudoPass.sh
