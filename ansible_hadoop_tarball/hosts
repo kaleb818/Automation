@@ -16,6 +16,9 @@
 # hadoop cluster
 #
 
+[java]
+10.4.0.200
+
 [namenodes]
 10.4.0.101
 

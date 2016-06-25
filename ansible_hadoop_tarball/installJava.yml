@@ -1,0 +1,11 @@
+#
+#-----------------------------
+#COMMON INSTALLATIONs
+#-----------------------------
+#
+
+- hosts: java
+  remote_user: jbus
+  sudo: True
+  roles:
+    - jdk
