@@ -1,0 +1,21 @@
+$ORIGIN .
+$TTL 600	; 10 minutes
+; replace with the zone name defined in /etc/named/named.conf.local
+; replace with the internal fqdn of the primary name server; note the trailing period (.)
+; replace with the hostmaster email address, represented with only periods (.), by convention this is `hostmaster.<your fqdn suffix>`; note the trailing period (.)
+jkbcdtest.internal	IN SOA	jkbcdsvr.jkbcdtest.internal. hostmaster.jkbcdtest.internal. (
+				10         ; serial
+				600        ; refresh (10 minutes)
+				60         ; retry (1 minute)
+				604800     ; expire (1 week)
+				600        ; minimum (10 minutes)
+				)
+                      ; replace with the internal fqdn of the primary name server; note the trailing period (.)
+			NS	jkbcdsvr.jkbcdtest.internal.
+
+; replace with the zone name defined in /etc/named/named.conf.local; note the trailing period (.)
+$ORIGIN jkbcdtest.internal.
+; replace with the hostname of your DNS host, this should be the prefix of the internal fqdn of the primary name server
+; replace with the internal IP of the primary name server 
+jkbdirsvr		A	10.10.0.4
+

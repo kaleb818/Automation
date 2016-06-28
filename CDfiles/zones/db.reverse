@@ -1,0 +1,13 @@
+$ORIGIN .
+$TTL 600	; 10 minutes
+0.10.10.in-addr.arpa	IN SOA	jkbcdsvr.jkbcdtest.internal. hostmaster.jkbcdtest.internal. (
+				12         ; serial
+				600        ; refresh (10 minutes)
+				60         ; retry (1 minute)
+				604800     ; expire (1 week)
+				600        ; minimum (10 minutes)
+				)
+			NS	jkbcdsvr.jkbcdtest.internal.
+$ORIGIN 0.10.10.in-addr.arpa.
+200			PTR	jkbcdsvr.jkbcdtest.internal.
+4			PTR	jkbcdsvr.jkbcdtest.internal.

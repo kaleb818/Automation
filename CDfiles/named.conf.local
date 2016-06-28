@@ -1,0 +1,16 @@
+// replace the zone name with with the internal host FQDN suffix of your choice (this is an option exposed in Director)
+zone "jkbcdtest.internal" IN {
+    type master;
+    file "/etc/named/zones/db.internal";
+    // replace with your subnet
+    allow-update { 10.10.0.0/24; };
+};
+
+// replace the zone name with the network prefix portion of your subnet, reversed
+zone "0.10.10.in-addr.arpa" IN {
+    type master;
+    file "/etc/named/zones/db.reverse";
+    // replace with your subnet
+    allow-update { 10.10.0.0/24; };
+ };
+
