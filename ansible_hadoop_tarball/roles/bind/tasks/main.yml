@@ -2,40 +2,24 @@
 
   - name: Install the bind package
     yum: name=bind state=latest
-    sudo: yes
-    sudo_user: jbus
 	
   - name: Install the bind-utils package
     yum: name=bind-utils state=latest
-    sudo: yes
-    sudo_user: jbus
 	
   - name: Create zones Directory.
     file: path=/etc/named/zones state=directory owner={{ main_user }} group={{ main_group }} 
-    sudo: yes
-    sudo_user: jbus
  
   - name: Copy the db.internal file.
     template: src=db.internal dest=/etc/named/zones/
-    sudo: yes
-    sudo_user: jbus
 
   - name: Copy the db.reverse file.
     template: src=db.reverse dest=/etc/named/zones/
-    sudo: yes
-    sudo_user: "{{ main_user }}"
 
   - name: Copy the named.conf file.
     template: src=named.conf dest=/etc/
-    sudo: yes
-    sudo_user: "{{ main_user }}"
 
   - name: Copy the named.conf.local file.
     template: src=db.reverse dest=/etc/named/
-    sudo: yes
-    sudo_user: "{{ main_user }}"
 	
   - name: Change ownership of /etc/named/.
     file: path=/etc/named owner=named group=named recurse=yes
-    sudo: yes
-    sudo_user: "{{ main_user }}"
