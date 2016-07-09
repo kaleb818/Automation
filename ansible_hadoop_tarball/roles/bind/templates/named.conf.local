@@ -1,0 +1,16 @@
+zone "cdh-cluster.internal" IN {
+    type master;
+    file "/etc/named/zones/db.internal";
+    // replace with your subnet
+    allow-update { 10.59.59.0/24; };
+};
+
+// replace the zone name with the network prefix portion of your subnet, reversed
+zone "59.59.10.in-addr.arpa" IN {
+    type master;
+    file "/etc/named/zones/db.reverse";
+    // replace with your subnet
+    allow-update { 10.59.59.0/24; };
+ };
+
+
