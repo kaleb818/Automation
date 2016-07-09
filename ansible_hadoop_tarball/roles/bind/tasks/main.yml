@@ -23,3 +23,6 @@
 
 - name: Change ownership of /etc/named/.
   file: path=/etc/named owner=named group=named recurse=yes
+  
+- name: Start named service
+  service: name=named state=started enabled=yes
