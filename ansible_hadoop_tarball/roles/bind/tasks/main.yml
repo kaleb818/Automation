@@ -1,25 +1,25 @@
 # file: roles/bind/tasks/main.yml
 
-  - name: Install the bind package
-    yum: name=bind state=latest
-	
-  - name: Install the bind-utils package
-    yum: name=bind-utils state=latest
-	
-  - name: Create zones Directory.
-    file: path=/etc/named/zones state=directory owner={{ main_user }} group={{ main_group }} 
- 
-  - name: Copy the db.internal file.
-    template: src=db.internal dest=/etc/named/zones/
+- name: Install the bind package
+  yum: name=bind state=latest
 
-  - name: Copy the db.reverse file.
-    template: src=db.reverse dest=/etc/named/zones/
+- name: Install the bind-utils package
+  yum: name=bind-utils state=latest
 
-  - name: Copy the named.conf file.
-    template: src=named.conf dest=/etc/
+- name: Create zones Directory.
+  file: path=/etc/named/zones state=directory owner={{ main_user }} group={{ main_group }} 
 
-  - name: Copy the named.conf.local file.
-    template: src=db.reverse dest=/etc/named/
-	
-  - name: Change ownership of /etc/named/.
-    file: path=/etc/named owner=named group=named recurse=yes
+- name: Copy the db.internal file.
+  template: src=db.internal dest=/etc/named/zones/
+
+- name: Copy the db.reverse file.
+  template: src=db.reverse dest=/etc/named/zones/
+
+- name: Copy the named.conf file.
+  template: src=named.conf dest=/etc/
+
+- name: Copy the named.conf.local file.
+  template: src=db.reverse dest=/etc/named/
+
+- name: Change ownership of /etc/named/.
+  file: path=/etc/named owner=named group=named recurse=yes
