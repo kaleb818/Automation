@@ -1,24 +1,41 @@
 ---
 
-  - name: Create a User `"{{ hadoop_user }}"` for all our Hadoop Modules.
-    user: name={{ hadoop_user }} password={{ hadoop_password }}
- 
-  - name: Create a .ssh Directory.
-    file: path=~/.ssh state=directory owner={{ hadoop_user }} group={{ hadoop_group }} mode=0700
+  - name: Install the bind package
+    yum: name=bind state=latest
     sudo: yes
-    sudo_user: "{{ hadoop_user }}"
- 
-  - name: Lets copy the template id_rsa to auth_keys location.
-    template: src=id_rsa.pub dest=~/.ssh/authorized_keys mode=644
+    sudo_user: "{{ main_user }}"
+	
+  - name: Install the bind-utils package
+    yum: name=bind-utils state=latest
     sudo: yes
-    sudo_user: "{{ hadoop_user }}"
- 
-  - name: Lets copy id_rsa to location .ssh.
-    template: src=id_rsa dest=~/.ssh/id_rsa mode=600
+    sudo_user: "{{ main_user }}"
+	
+  - name: Create zones Directory.
+    file: path=/etc/named/zones state=directory owner={{ main_user }} group={{ main_group }} 
     sudo: yes
-    sudo_user: "{{ hadoop_user }}"
+    sudo_user: "{{ main_user }}"
  
-  - name: Lets copy id_rsa.pub to location .ssh.
-    template: src=id_rsa.pub dest=~/.ssh/id_rsa.pub mode=644
+  - name: Copy the db.internal file.
+    template: src=db.internal dest=/etc/named/zones/
     sudo: yes
-    sudo_user: "{{ hadoop_user }}"
+    sudo_user: "{{ main_user }}"
+
+  - name: Copy the db.reverse file.
+    template: src=db.reverse dest=/etc/named/zones/
+    sudo: yes
+    sudo_user: "{{ main_user }}"
+
+  - name: Copy the named.conf file.
+    template: src=named.conf dest=/etc/
+    sudo: yes
+    sudo_user: "{{ main_user }}"
+
+  - name: Copy the named.conf.local file.
+    template: src=db.reverse dest=/etc/named/
+    sudo: yes
+    sudo_user: "{{ main_user }}"
+	
+  - name: Change ownership of /etc/named/.
+    file: path=/etc/named owner=named group=named recurse=yes
+    sudo: yes
+    sudo_user: "{{ main_user }}"
