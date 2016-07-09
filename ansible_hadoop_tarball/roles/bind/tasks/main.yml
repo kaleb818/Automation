@@ -7,7 +7,7 @@
   yum: name=bind-utils state=latest
 
 - name: Create zones Directory.
-  file: path=/etc/named/zones state=directory owner={{ main_user }} group={{ main_group }} 
+  file: path=/etc/named/zones state=directory owner=jbus group=jbus 
 
 - name: Copy the db.internal file.
   template: src=db.internal dest=/etc/named/zones/
