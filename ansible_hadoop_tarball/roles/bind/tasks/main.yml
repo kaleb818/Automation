@@ -1,4 +1,4 @@
----
+# file: roles/bind/tasks/main.yml
 
   - name: Install the bind package
     yum: name=bind state=latest
