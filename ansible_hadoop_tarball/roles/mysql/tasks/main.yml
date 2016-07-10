@@ -18,4 +18,4 @@
 - name: Update MySQL root password for localhost root account (5.7.x).
   shell: >
     mysql -u root -NBe
-    'CREATE USER 'jbus'@'%' IDENTIFIED BY 'SprPassw0rd123';GRANT ALL PRIVILEGES ON *.* TO 'jbus'@'%' WITH GRANT OPTION;'
+    'CREATE USER "jbus"@"%" IDENTIFIED BY "SprPassw0rd123";GRANT ALL PRIVILEGES ON *.* TO "jbus"@"%" WITH GRANT OPTION;'
