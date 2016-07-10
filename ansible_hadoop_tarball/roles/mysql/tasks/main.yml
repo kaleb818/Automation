@@ -18,5 +18,8 @@
 - name: Create jbus user and assign rights.
   mysql_user: name=jbus password=SprPassw0rd123 priv=*.*:ALL state=present
 
+- name: Copy and UnArchive the Package in Destination Server.
+  unarchive: creates={{ common['install_base_path'] }}/{{ hadoop_version }} src=file_archives/{{ hadoop_version }}.tar.gz dest={{ common['install_base_path'] }} owner={{ hadoop_user }} group={{ hadoop_group }}
+
 - name: Copy the JDBC file.
   template: src=mysql-connector-java-5.1.39-bin.jar dest=/usr/java/share/
