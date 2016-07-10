@@ -16,4 +16,4 @@
   service: name=mysqld state=started enabled=yes
   
 - name: Copy the JDBC file.
-  command: cp /home/jbus/Automation/ansible_hadoop_tarball/file_archives/mysql-connector-java-5.1.39-bin.jar dest=/usr/java/share/mysql-connector-java-5.1.39-bin.jar
+  command: cp /home/jbus/Automation/ansible_hadoop_tarball/file_archives/mysql-connector-java-5.1.39-bin.jar dest=/usr/share/java/mysql-connector-java-5.1.39-bin.jar
