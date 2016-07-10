@@ -9,4 +9,4 @@ cdh-cluster.internal	IN SOA	jkbautovm.cdh-cluster.internal. hostmaster.cdh-clust
 				)
 			NS	jkbautovm.cdh-cluster.internal.
 $ORIGIN cdh-cluster.internal.
-jkbautovm01		A	10.59.59.10
+jkbautovm		A	10.59.59.10
