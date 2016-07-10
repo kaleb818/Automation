@@ -10,7 +10,7 @@
   yum: name=redhat-lsb state=latest  
 
 - name: Copy and UnArchive the Azure Plugin Package.
-  unarchive: creates=/var/lib/cloudera-director-plugins/azure-provider-1.0.0-beta_nielsen.3 src=/home/jbus/azure-provider-1.0.0-beta_nielsen.3.tar.gz
+  unarchive: creates=/var/lib/cloudera-director-plugins/azure-provider-1.0.0-beta_nielsen.3 dest=/var/lib/cloudera-director-plugins/ src=/home/jbus/azure-provider-1.0.0-beta_nielsen.3.tar.gz
 
 - name: Remove old Azure Plugin
   command: rm -Rf /var/lib/cloudera-director-plugins/azure-provider-1.0.0-beta.2
