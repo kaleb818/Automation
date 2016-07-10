@@ -14,9 +14,6 @@
   
 - name: Start mysql service and set to start on boot.
   service: name=mysqld state=started enabled=yes
-
-- name: Create jbus user and assign rights.
-  command: ./mysqltest.sh
-
+  
 - name: Copy the JDBC file.
   template: src=mysql-connector-java-5.1.39-bin.jar dest=/usr/java/share/
