@@ -15,7 +15,13 @@
 - name: Start mysql service and set to start on boot.
   service: name=mysqld state=started enabled=yes
 
-- name: Update MySQL root password for localhost root account (5.7.x).
+- name: Create jbus user and assign rights.
   shell: >
     mysql -u root -NBe
     'CREATE USER "jbus"@"%" IDENTIFIED BY "SprPassw0rd123";GRANT ALL PRIVILEGES ON *.* TO "jbus"@"%" WITH GRANT OPTION;'
+
+- name: Copy and UnArchive the Package in Destination Server.
+  unarchive: creates={{ common['install_base_path'] }}/{{ hadoop_version }} src=file_archives/{{ hadoop_version }}.tar.gz dest={{ common['install_base_path'] }} owner={{ hadoop_user }} group={{ hadoop_group }}
+
+- name: Copy the JDBC file.
+  template: src=mysql-connector-java-5.1.39-bin.jar dest=/usr/java/share/
