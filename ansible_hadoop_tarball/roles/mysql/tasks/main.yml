@@ -1,4 +1,4 @@
-# file: roles/bind/tasks/main.yml
+# file: roles/mysql/tasks/main.yml
 
 - name: Install the sql package.
   yum: name=mysql-server state=latest
