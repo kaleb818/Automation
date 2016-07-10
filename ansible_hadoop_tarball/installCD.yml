@@ -1,0 +1,12 @@
+#
+#-----------------------------
+#COMMON INSTALLATIONs
+#-----------------------------
+#
+
+- hosts: localhost
+  remote_user: jbus
+  sudo: True
+  roles:
+    - jdk
+    - cd

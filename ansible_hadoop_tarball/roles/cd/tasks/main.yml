@@ -14,3 +14,6 @@
 
 - name: Remove old Azure Plugin
   command: rm -Rf /var/lib/cloudera-director-plugins/azure-provider-1.0.0-beta.2
+  
+- name: Start Cloudera Director service and set to start on boot.
+  service: name=cloudera-director-server state=started enabled=yes
