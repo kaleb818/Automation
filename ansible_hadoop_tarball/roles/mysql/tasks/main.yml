@@ -16,7 +16,9 @@
   service: name=mysqld state=started enabled=yes
 
 - name: Create jbus user and assign rights.
-  mysql_user: name=jbus password=SprPassw0rd123 priv=*.*:ALL state=present
+  shell: >
+    mysql -u root -NBe
+    'CREATE USER "jbus"@"%" IDENTIFIED BY "SprPassw0rd123";GRANT ALL PRIVILEGES ON *.* TO "jbus"@"%" WITH GRANT OPTION;'
 
 - name: Copy and UnArchive the Package in Destination Server.
   unarchive: creates={{ common['install_base_path'] }}/{{ hadoop_version }} src=file_archives/{{ hadoop_version }}.tar.gz dest={{ common['install_base_path'] }} owner={{ hadoop_user }} group={{ hadoop_group }}
