@@ -16,9 +16,7 @@
   service: name=mysqld state=started enabled=yes
 
 - name: Create jbus user and assign rights.
-  shell: >
-    mysql -u root -NBe
-    'CREATE USER "jbus"@"%" IDENTIFIED BY "SprPassw0rd123";GRANT ALL PRIVILEGES ON *.* TO "jbus"@"%" WITH GRANT OPTION;'
-
+  command: mysql -e 'CREATE USER jbus@jkbautovm IDENTIFIED BY "SprPassw0rd123";GRANT ALL PRIVILEGES ON *.* TO jbus@jkbautovm WITH GRANT OPTION;'
+	
 - name: Copy the JDBC file.
   template: src=mysql-connector-java-5.1.39-bin.jar dest=/usr/java/share/
