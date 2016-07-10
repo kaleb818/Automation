@@ -1,0 +1,21 @@
+# file: roles/bind/tasks/main.yml
+
+- name: Install the bind package.
+  yum: name=mysql-server state=latest
+
+- name: Stop mysql service.
+  service: name=mysql state=stopped
+
+- name: Rename the existing conf file.
+  command: mv /etc/my.conf /etc/my.conf.old 
+
+- name: Copy the new conf file.
+  template: src=my.conf dest=/etc/
+  
+- name: Start mysql service and set to start on boot.
+  service: name=mysql state=started enabled=yes
+
+- name: Update MySQL root password for localhost root account (5.7.x).
+  shell: >
+    mysql -u root -NBe
+    'CREATE USER 'jbus'@'%' IDENTIFIED BY 'SprPassw0rd123';GRANT ALL PRIVILEGES ON *.* TO 'jbus'@'%' WITH GRANT OPTION;'
