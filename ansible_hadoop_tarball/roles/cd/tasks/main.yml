@@ -1,10 +1,10 @@
 # file: roles/mysql/tasks/main.yml
 
 - name: Install the CD Plugins.
-  command: rpm -i cloudera-director-plugins-2.1.0-1.director210beta2.p0.47.el6.x86_64.rpm
+  command: rpm -i /home/jbus/cloudera-director-plugins-2.1.0-1.director210beta2.p0.47.el6.x86_64.rpm
 
 - name: Install the CD Client.
-  command: rpm -i cloudera-director-client-2.1.0-1.director210beta2.p0.47.el6.x86_64.rpm
+  command: rpm -i /home/jbus/cloudera-director-client-2.1.0-1.director210beta2.p0.47.el6.x86_64.rpm
 
 - name: Install redhat-lsb
   yum: name=redhat-lsb state=latest  
