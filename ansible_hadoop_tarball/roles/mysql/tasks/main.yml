@@ -13,7 +13,7 @@
   template: src=my.cnf dest=/etc/
   
 - name: Start mysql service and set to start on boot.
-  service: name=mysql state=started enabled=yes
+  service: name=mysqld state=started enabled=yes
 
 - name: Update MySQL root password for localhost root account (5.7.x).
   shell: >
