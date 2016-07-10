@@ -7,10 +7,10 @@
   service: name=mysqld state=stopped
 
 - name: Rename the existing conf file.
-  command: mv /etc/my.conf /etc/my.conf.old 
+  command: mv /etc/my.cnf /etc/my.cnf.old 
 
 - name: Copy the new conf file.
-  template: src=my.conf dest=/etc/
+  template: src=my.cnf dest=/etc/
   
 - name: Start mysql service and set to start on boot.
   service: name=mysql state=started enabled=yes
