@@ -19,7 +19,7 @@
   template: src=named.conf dest=/etc/
 
 - name: Copy the named.conf.local file.
-  template: src=db.reverse dest=/etc/named/
+  template: src=named.conf.local dest=/etc/named/
 
 - name: Change ownership of /etc/named/.
   file: path=/etc/named owner=named group=named recurse=yes
