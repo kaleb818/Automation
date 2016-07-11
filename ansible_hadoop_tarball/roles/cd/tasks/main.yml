@@ -9,6 +9,9 @@
 - name: Install redhat-lsb
   yum: name=redhat-lsb state=latest  
 
+- name: Install the CD Server.
+  command: rpm -i /home/jbus/cloudera-director-server-2.1.0-1.director210beta2.p0.47.el6.x86_64.rpm
+  
 - name: Copy and UnArchive the Azure Plugin Package.
   unarchive: creates=/var/lib/cloudera-director-plugins/azure-provider-1.0.0-beta.3 dest=/var/lib/cloudera-director-plugins/ src=/home/jbus/azure-provider-1.0.0-beta.3_neilson.tar.gz
 
