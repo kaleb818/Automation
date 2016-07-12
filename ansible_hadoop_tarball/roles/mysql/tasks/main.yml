@@ -17,4 +17,6 @@
   
 - name: Copy the JDBC file.
   command: cp /home/jbus/Automation/ansible_hadoop_tarball/file_archives/mysql-connector-java-5.1.39-bin.jar /usr/share/java/
- 
+
+- name: Create the user jbus
+  mysql_user: name=jbus password=SprPassw0rd123 priv=*.*:ALL state=present
