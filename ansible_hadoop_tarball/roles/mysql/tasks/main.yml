@@ -3,6 +3,9 @@
 - name: Install the sql package.
   yum: name=mysql-server state=latest
 
+- name: Install the MySQL Python Package
+  yum: name=MySQL-python state=latest
+  
 - name: Stop mysql service.
   service: name=mysqld state=stopped
 
